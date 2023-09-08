@@ -10,10 +10,18 @@
 
 int main(void)
 {
-	for (int i = 48; i < 58; i++)
+	int i = 48, j = 97;
+
+	while (i < 58)
+	{
 		putchar(i);
-	for (int i = 97; i < 103; i++)
-		putchar(i);
-	putchar('\n');
+		i++;
+	}
+	while (j < 103)
+	{
+		putchar(j);
+		j++;
+	}
+	purchar('\n');
 	return (0);
 }
