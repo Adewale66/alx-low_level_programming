@@ -11,17 +11,32 @@
 
 int main(void)
 {
-	for (int i = 48; i < 56; i++)
-		for (int j = i + 1; j < 57; j++)
-			for (int k = j + 1; k < 58; k++)
+	int i = 48;
+
+	while (i < 56)
+	{
+		int j = i + 1;
+
+		while (j < 57)
+		{
+			int k = j + 1;
+
+			while (k < 58)
 			{
 				putchar(i);
 				putchar(j);
 				putchar(k);
 				if (i != 55)
+				{
 					putchar(',');
-				putchar(' ');
+					putchar(' ');
+				}
+				k++;
 			}
+			j++;
+		}
+		i++;
+	}
 	putchar('\n');
 	return (0);
 }
