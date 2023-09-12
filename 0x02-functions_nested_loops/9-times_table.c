@@ -12,6 +12,7 @@ void times_table(void)
 
 	for (i = 48; i < 58; i++)
 	{
+		j = 0;
 		for (k = 0; k < 10; k++)
 		{
 			if (j <= 9)
