@@ -14,7 +14,7 @@ void times_table(void)
 	{
 		int k, j = 0;
 
-		for (k = 48; k < 58; k++)
+		for (k = 0; k < 10; k++)
 		{
 			if (j <= 9)
 				_putchar(48 + j);
@@ -23,7 +23,8 @@ void times_table(void)
 				_putchar(48 + (j / 10));
 				_putchar(48 + (j % 10));
 			}
-			_putchar(44);
+			if (k != 9)
+				_putchar(44);
 			if (j <= 9)
 				_putchar(32);
 			_putchar(32);
