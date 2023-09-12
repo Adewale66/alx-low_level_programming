@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int i
+	int i;
 	unsigned long x = 0, y = 1, temp;
 
 
