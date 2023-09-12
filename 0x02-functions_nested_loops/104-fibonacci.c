@@ -13,12 +13,10 @@ int main(void)
 	while (x < 98)
 	{
 		int c = a + b;
-		
 		printf("%d, ", c);
-		
-		 a = b;
-		 b = c;
-		 x++;
+		a = b;
+		b = c;
+		x++;
 	}
 	printf("\n");
 	return (0);

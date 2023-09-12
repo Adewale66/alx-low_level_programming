@@ -7,17 +7,23 @@
 
 int main(void)
 {
-	int i, n = 50, x = 1, y = 2, temp;
+	int i
+	unsigned long x = 0, y = 1, temp;
 
-	for (i = 0; i < n ; i++)
+
+	for (i = 0; i < 50 ; i++)
 	{
-		printf("%d, ", x);
-		temp = x;
+		temp = x + y;
+		printf("%lu", temp);
 
 		x = y;
-		y += temp;
+		y = temp;
+
+		if (i == 49)
+			printf("\n");
+		else
+			printf(",")
 	}
-	printf("\n");
 	return (0);
 
 }
