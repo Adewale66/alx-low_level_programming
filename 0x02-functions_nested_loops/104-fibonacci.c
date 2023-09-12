@@ -7,12 +7,12 @@
 
 int main(void)
 {
-	int i, n = 98, x = 1, y = 2;
+	int i, n = 98, x = 1, y = 2, temp;
 
 	for (i = 0; i < n ; i++)
 	{
 		printf("%d, ", x);
-		int temp = x;
+		temp = x;
 
 		x = y;
 		y += temp;
