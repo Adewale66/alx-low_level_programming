@@ -1,1 +1,1 @@
-More loops
+More functions
