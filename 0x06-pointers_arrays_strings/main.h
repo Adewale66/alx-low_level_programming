@@ -2,7 +2,9 @@
 #define MAIN_H
 
 int _putchar(char);
+int countDigits(unsigned long);
 char *_strcat(char *, char *);
+unsigned long getNum(char *);
 char *_strncat(char *, char *, int);
 char *_strncpy(char *, char *, int);
 int _strcmp(char *, char *);
@@ -12,5 +14,6 @@ char *cap_string(char *);
 char *leet(char *);
 char *rot13(char *);
 void print_number(int);
+char *infinite_add(char *, char *, char *, int);
 
 #endif
