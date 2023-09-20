@@ -8,10 +8,12 @@
 
 char *cap_string(char *s)
 {
-	int len = 1;
+	int len = 1, j;
+	char c[] = ",;.!?\"(){}";
 
 	if (s[0] > 96 && s[0] < 123)
 		s[0] -= 32;
+
 
 	while (s[len] != '\0')
 	{
@@ -22,15 +24,14 @@ char *cap_string(char *s)
 			if (s[len] > 96 && s[len] < 123)
 				s[len] -= 32;
 		}
-		else if (t > 32 && t < 48)
+		for (j = 0; j < 10; j++)
 		{
-			if (s[len] > 96 && s[len] < 123)
-				s[len] -= 32;
-		}
-		else if (t == 58 || t == 63 || t == 123 || t == 125)
-		{
-			if (s[len] > 96 && s[len] < 123)
-				s[len] -= 32;
+			if (t == (int) c[j])
+			{
+				if (s[len] > 96 && s[len] < 123)
+					s[len] -= 32;
+				break;
+			}
 		}
 		len++;
 	}
