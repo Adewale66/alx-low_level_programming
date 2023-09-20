@@ -2,9 +2,7 @@
 #define MAIN_H
 
 int _putchar(char);
-int countDigits(unsigned long);
 char *_strcat(char *, char *);
-unsigned long getNum(char *);
 char *_strncat(char *, char *, int);
 char *_strncpy(char *, char *, int);
 int _strcmp(char *, char *);
