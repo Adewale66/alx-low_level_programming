@@ -27,7 +27,7 @@ char *cap_string(char *s)
 			if (s[len] > 96 && s[len] < 123)
 				s[len] -= 32;
 		}
-		else if (t == 58 || t == 63 || t == 123 || == 125)
+		else if (t == 58 || t == 63 || t == 123 || t == 125)
 		{
 			if (s[len] > 96 && s[len] < 123)
 				s[len] -= 32;
