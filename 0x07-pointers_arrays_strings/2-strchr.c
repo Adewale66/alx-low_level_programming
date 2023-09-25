@@ -20,9 +20,10 @@ char *_strchr(char *s, char c)
 			f = s + len;
 			break;
 		}
-		if (f != '\0')
+		if (*f != '\0')
 			break;
 		len++;
 	}
 	return (f);
 }
+
