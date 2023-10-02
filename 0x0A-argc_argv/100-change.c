@@ -23,7 +23,10 @@ int main(int argc, char *argv[])
 	cents = atoi(argv[1]);
 
 	if (cents < 0)
+	{
 		puts("0");
+		return (0);
+	}
 
 	quarters = cents / 25;
 	cents = cents - quarters * 25;
