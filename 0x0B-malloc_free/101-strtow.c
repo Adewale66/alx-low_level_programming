@@ -29,6 +29,8 @@ char **strtow(char *str)
 	char **t;
 	int i = 0, l = 0, strle, j;
 
+	if (str == NULL || *str == '\0')
+		return (NULL);
 	for (; str[i] != '\0'; i++)
 		if (str[i] != ' ')
 			if (i - 1 < 0 || str[i - 1] == ' ')
