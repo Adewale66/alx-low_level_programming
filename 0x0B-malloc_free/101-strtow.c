@@ -12,7 +12,7 @@ int _strlen(char *s)
 {
 	int l = 0;
 
-	while (s[l] != '\0' || s[l] != ' ')
+	while (s[l] != '\0' && s[l] != ' ')
 		l++;
 	return (l);
 }
@@ -30,18 +30,11 @@ char **strtow(char *str)
 	int i = 0, l = 0, strle, j;
 
 	for (; str[i] != '\0'; i++)
-	{
-		if (str[i] > 64 && str[i] < 91)
-			if (i - 1 < 0 || str[i - 1] == ' ')
-			{
-				l++;
-			}
-		if (str[i] > 96 && str[i] < 123)
+		if (str[i] != ' ')
 			if (i - 1 < 0 || str[i - 1] == ' ')
 				l++;
-	}
 
-	t = (char **) malloc(sizeof(char *) * l + 1);
+	t = (char **) malloc(sizeof(char *) * (l + 1));
 
 	if (t == NULL)
 		return (NULL);
@@ -50,7 +43,7 @@ char **strtow(char *str)
 		strle = 0;
 		while (*str != '\0')
 		{
-			if ((*str > 64 && *str < 91) || (*str > 96 && *str < 123))
+			if (*str != ' ')
 			{
 				strle = _strlen(str);
 				break;
