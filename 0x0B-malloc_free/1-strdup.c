@@ -9,8 +9,8 @@
 
 char *_strdup(char *str)
 {
-	char *t = (char *) malloc(sizeof(char *));
-	int len = 0;
+	char *t;
+	int len = 0, i = 0;
 
 	if (str == NULL)
 		return (NULL);
@@ -19,10 +19,11 @@ char *_strdup(char *str)
 		return (NULL);
 
 	while (str[len] != '\0')
-	{
-		t[len] = str[len];
 		len++;
-	}
+	t = (char *) malloc(len);
+
+	for (; i < len; i++)
+		t[i] = str[i];
 	t[len] = '\0';
 	return (t);
 }
