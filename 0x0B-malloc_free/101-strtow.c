@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-
 /**
  * _strlen - gets the length of a string
  * @s: string to count
@@ -35,9 +34,9 @@ char **strtow(char *str)
 		if (str[i] != ' ')
 			if (i - 1 < 0 || str[i - 1] == ' ')
 				l++;
-
+	if (l == 0)
+		return (NULL);
 	t = (char **) malloc(sizeof(char *) * (l + 1));
-
 	if (t == NULL)
 		return (NULL);
 	for (i = 0; i < l; i++)
