@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	res = atoll(num1) * atoll(num2);
+	res = atoll(num1_str) * atoll(num2_str);
 
 	printf("%llu\n", res);
 
