@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 {
 	char *num1_str;
 	char *num2_str;
-	unsigned long long int res;
+	unsigned long res, num1, num2;
 
 	if (argc != 3)
 	{
@@ -46,9 +46,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	res = atoll(num1_str) * atoll(num2_str);
+	num1 = strtoul(num1_str, NULL, 10);
+	num2 = strtoul(num2_str, NULL, 10);
+	res = num1 * num2;
 
-	printf("%llu\n", res);
+	printf("%lu\n", res);
 
 	return (0);
 
