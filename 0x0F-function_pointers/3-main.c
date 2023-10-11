@@ -1,6 +1,5 @@
 #include "3-calc.h"
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 
 /**
@@ -13,20 +12,20 @@
 int main(int argc, char *argv[])
 {
 	int (*op)(int, int);
-	int div, mod;
+	char *symbol;
 
 	if (argc != 4)
 	{
 		puts("Error");
 		exit(98);
 	}
-	div = strcmp(argv[2], "/");
-	mod = strcmp(argv[2], "%");
 
+	symbol = argv[2];
 	op = get_op_func(argv[2]);
+
 	if (op)
 	{
-		if ((div == 0 || mod == 0) && atoi(argv[3]) == 0)
+		if ((*symbol == '/' || *symbol == '%') && atoi(argv[3]) == 0)
 		{
 			puts("Error");
 			exit(100);
