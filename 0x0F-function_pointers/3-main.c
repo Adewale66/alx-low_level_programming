@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	op = get_op_func(argv[2]);
 	if (op)
 	{
-		if ((div == 0 || mod == 0) && (argv[3] == 0 || argv[1] == 0))
+		if ((div == 0 || mod == 0) && atoi(argv[3]) == 0)
 		{
 			puts("Error");
 			exit(100);
