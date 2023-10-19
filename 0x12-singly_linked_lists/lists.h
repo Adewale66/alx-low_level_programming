@@ -1,6 +1,10 @@
 #ifndef __LISTS__
 #define __LISTS__
-#include <stddef.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #define P(format) printf(format)
 
 /**
