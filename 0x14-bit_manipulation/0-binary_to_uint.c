@@ -9,46 +9,16 @@
 unsigned int binary_to_uint(const char *b)
 {
 
-	unsigned int n = 0, highest_power;
-	int len = 0;
+	int x = 0, i = 0;
 
 	if (b == NULL)
 		return (0);
-
-	while (b[len] != '\0')
-		len++;
-
-	highest_power = custom_pow(2, len - 1);
-	len = 0;
-	while (b[len] != '\0')
+	while (b[i])
 	{
-		if (b[len] != '0' && b[len] != '1')
+		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		if (b[len] == '1')
-			n += highest_power;
-		highest_power /= 2;
-		len++;
+		x = x * 2 + (b[i] - '0');
+		i++;
 	}
-	return (n);
-}
-
-/**
- * custom_pow - calculates the power of a number
- * @base: base number
- * @exponent: exponent number
- * Return: the power of the number
- */
-
-unsigned int custom_pow(unsigned int base, unsigned int exponent)
-{
-	unsigned int result = 1;
-
-	while (exponent > 0)
-	{
-		if (exponent & 1)
-			result *= base;
-		base *= base;
-		exponent >>= 1;
-	}
-	return (result);
+	return (x);
 }

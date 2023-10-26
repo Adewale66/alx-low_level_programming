@@ -8,21 +8,28 @@
 
 void print_binary(unsigned long int n)
 {
-	int bitCount = 0, temp = n, i;
+	unsigned long int bitCount = 1, temp = n, i = 0;
 
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 
 	while (temp != 0)
 	{
-		bitCount++;
+		i++;
 		temp >>= 1;
 	}
 
-	for (i = bitCount - 1; i >= 0; i--)
-	{
-		int bit = (n >> i) & 1;
+	bitCount = bitCount << (i - 1);
 
-		_putchar(bit + '0');
+	for (; i > 0; i--)
+	{
+		if (n & bitCount)
+			_putchar('1');
+		else
+			_putchar('0');
+		bitCount >>= 1;
 	}
 }
