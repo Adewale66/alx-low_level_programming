@@ -47,9 +47,9 @@ char *file_from(char *arg1, char *ran)
 
 int main(int argc, char **argv)
 {
-	int fd, ct, len;
-	ssize_t bytes;
-	char *buffer;
+	int ft, ct, count;
+	ssize_t w;
+	char *reading;
 	char ran[4096];
 
 	if (argc != 3)
@@ -57,26 +57,26 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buffer = file_from(argv[1], ran);
-	fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fd == -1)
+	reading = file_from(argv[1], ran);
+	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (ft == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while (buffer[len])
-		len++;
+	while (reading[count])
+		count++;
 
-	bytes = write(fd, buffer, len);
-	if (bytes == -1)
+	w = write(ft, reading, count);
+	if (w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	ct = close(fd);
+	ct = close(ft);
 	if (ct == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ft);
 		exit(100);
 	}
 	return (1);
