@@ -1,5 +1,6 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
+#define __home inline
 
 #include <stdlib.h>
 #include <stdio.h>
