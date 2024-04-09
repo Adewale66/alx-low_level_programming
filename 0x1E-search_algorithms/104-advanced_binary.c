@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * recursive binary - uses recursion for binary search
+ * recursive_bs - uses recursion for binary search
  * @arr: array
  * @l: start
  * @r: end
