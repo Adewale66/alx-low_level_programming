@@ -1,40 +1,42 @@
 #include "search_algos.h"
 
 /**
- * advanced_binary - advanced binary search
- * @array: array
- * @size: size
- * @value: value
- * Return: index or -1;
+ * advanced_binary - searches for a value in a sorted array of integers
+ * using the Binary search algorithm
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in the array
+ * @value: value to search for
+ * Return: index where value is located, or -1
  */
+
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t i, mid = size / 2;
+	size_t i = 0;
+	int index;
 
 	if (!array)
 		return (-1);
-	if (size == 1)
-	{
-		if (array[0] == value)
-			return (0);
-		return (-1);
-	}
+
 	printf("Searching in array: ");
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size - 1; i++)
+		printf("%i, ", array[i]);
+	printf("%i\n", array[i]);
+
+	if (size == 1 && array[0] != value)
+		return (-1);
+
+	index = size / 2;
+	if (array[index] == value)
 	{
-		printf("%d", array[i]);
-		if (i < size - 1)
-			printf(", ");
+		if (array[index - 1] < value)
+			return (index);
 	}
-	printf("\n");
-	if (array[mid] == value)
+	if (array[index] < value)
 	{
-		if (array[mid - 1] < value)
-			return (mid);
+		index++;
+		array += index;
+		if (size % 2 != 0)
+			index--;
 	}
-	if (array[mid] < value)
-	{
-		return (mid + advanced_binary(array + mid, size - mid, value));
-	}
-	return (advanced_binary(array, mid + 1, value));
+	return (advanced_binary(array, size / 2, value) + index);
 }
