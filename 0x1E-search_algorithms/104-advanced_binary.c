@@ -7,32 +7,34 @@
  * @value: value
  * Return: index or -1;
  */
-
 int advanced_binary(int *array, size_t size, int value)
 {
+	size_t i, mid = size / 2;
 
-	int l = 0;
-	int r = size;
-
-	while (l < r)
+	if (!array)
+		return (-1);
+	if (size == 1)
 	{
-		int m = floor((l + r) / 2);
-		int i = l;
-
-		printf("Searching in array: ");
-		for (; i < r; i++)
-		{
-			printf("%i", array[i]);
-			if (i != r - 1)
-				printf(", ");
-		}
-		printf("\n");
-
-		if (array[m] < value)
-			l = m + 1;
-		else
-			r = m;
+		if (array[0] == value)
+			return (0);
+		return (-1);
 	}
-
-	return (array[l] == value ? l : -1);
+	printf("Searching in array: ");
+	for (i = 0; i < size; i++)
+	{
+		printf("%d", array[i]);
+		if (i < size - 1)
+			printf(", ");
+	}
+	printf("\n");
+	if (array[mid] == value)
+	{
+		if (array[mid - 1] < value)
+			return (mid);
+	}
+	if (array[mid] < value)
+	{
+		return (mid + advanced_binary(array + mid, size - mid, value));
+	}
+	return (advanced_binary(array, mid + 1, value));
 }

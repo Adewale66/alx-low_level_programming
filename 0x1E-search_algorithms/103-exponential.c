@@ -50,26 +50,24 @@ int binary_s(int *array, int start, size_t size, int value)
 }
 
 /**
- * exponential_search - searches for a value using Exponential search algorithm
- * @array: pointer to the first element
+ * exponential_search - searches for a value using exponential search
+ * @array: pointer to first element
  * @size: size of the array
  * @value: value to find
- * Return: first index of value or -1
+ * Return: index if found or -1;
  */
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t bound = 1;
+	size_t i = 1;
 
-	if (size == 0)
+	if (!array)
 		return (-1);
-
-	while (bound < size && array[bound] < value)
+	while (i < size && array[i] <= value)
 	{
-		printf("Value checked array[%li] = [%i]\n", bound, array[bound]);
-		bound *= 2;
+		printf("Value checked array[%li] = [%d]\n", i, array[i]);
+		i *= 2;
 	}
-	printf("Value found between indexes [%li] and [%li]\n", bound / 2, bound);
-
-	return (binary_s(array, bound / 2, min(bound + 1, size), value));
+	printf("Value found between indexes [%li] and [%li]\n", i / 2, min(i, size));
+	return (binary_s(array, i / 2, min(i, size), value));
 }
