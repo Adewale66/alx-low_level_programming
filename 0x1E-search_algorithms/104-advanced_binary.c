@@ -35,7 +35,7 @@ int recursive_bs(int *arr, int l, int r, int x)
 	}
 	if (arr[l] != x)
 	{
-		printf("Searching in array: %i\n", l);
+		printf("Searching in array: %i\n", arr[l]);
 		return (-1);
 	}
 
